@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: CI
+name: Trigger Dispatch
 
 # Controls when the workflow will run
 on:
@@ -34,4 +34,4 @@ jobs:
           token: ${{ secrets.PARENT_REP_AT }}
           repository: ${{ matrix.repo }}
           event-type: update-submodule
-          client-payload: '{"ref": "${{ github.ref }}", "sha": "${{ github.sha }}"}'
+          client-payload: '{"ref": "${{ github.ref }}", "sha": "${{ github.sha }}", "path": "tools"}'
