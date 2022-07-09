@@ -31,7 +31,7 @@ jobs:
       - name: Repository Dispatch
         uses: peter-evans/repository-dispatch@v2
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.PARENT_REP_AT }}
           repository: ${{ matrix.repo }}
           event-type: update-submodule
           client-payload: '{"ref": "${{ github.ref }}", "sha": "${{ github.sha }}"}'
